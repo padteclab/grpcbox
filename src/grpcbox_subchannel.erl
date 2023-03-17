@@ -124,6 +124,6 @@ connect(Data=#data{conn=Pid}, From, Actions) when is_pid(Pid) ->
     connect(Data#data{conn=undefined}, From, Actions).
 
 options(https, Options) ->
-    [{client_preferred_next_protocols, {client, [<<"h2">>]}} | Options];
+    [{alpn_preferred_protocols, [<<"h2">>]} | Options];
 options(http, Options) ->
     Options.

@@ -26,7 +26,7 @@ init([ServerOpts, ChatterboxOpts, TransportOpts]) ->
                                           {fail_if_no_peer_cert, true},
                                           {verify, verify_peer},
                                           {versions, ['tlsv1.2']},
-                                          {next_protocols_advertised, [<<"h2">>]}]};
+                                          {alpn_preferred_protocols, [<<"h2">>]}]};
                                _ ->
                                    {gen_tcp, []}
                            end,
